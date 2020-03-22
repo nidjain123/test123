@@ -14,8 +14,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Vehicle {
 
-  private String registrationNumber;
-  private VehicleType type;
-  private String color;
+    private String registrationNumber;
+    private VehicleType type;
+    private String color;
 
 }

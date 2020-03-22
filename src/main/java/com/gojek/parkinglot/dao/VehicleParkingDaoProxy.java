@@ -1,24 +1,25 @@
 package com.gojek.parkinglot.dao;
 
+import java.util.List;
+
 import com.gojek.parkinglot.model.ParkingLevel;
 import com.gojek.parkinglot.model.Vehicle;
 import com.gojek.parkinglot.model.VehicleParkingLocation;
-import java.util.List;
 
 public interface VehicleParkingDaoProxy {
 
-  void createPartkingLot(final int noOflevels, final List<ParkingLevel> levels);
+    void createPartkingLot(final int noOflevels, final List<ParkingLevel> levels);
 
-  VehicleParkingLocation parkVehicle(final Vehicle vehicle);
+    VehicleParkingLocation parkVehicle(final Vehicle vehicle);
 
-  boolean leaveSlot(final int level, final int slotNumber);
+    boolean leaveSlot(final int level, final int slotNumber);
 
-  List<ParkingLevel> getParkingLotStatus();
+    List<ParkingLevel> getParkingLotStatus();
 
-  List<String> getRegistrationNumbersWithColor(final String color);
+    List<String> getRegistrationNumbersWithColor(final String color);
 
-  List<Integer> getSlotNumbersWithColor(final String color);
+    List<Integer> getSlotNumbersWithColor(final String color);
 
-  int getSlotNumberWithRegNumber(final String registrationNumber);
+    int getSlotNumberWithRegNumber(final String registrationNumber);
 
 }
