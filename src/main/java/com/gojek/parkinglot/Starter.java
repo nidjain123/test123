@@ -1,6 +1,6 @@
 package com.gojek.parkinglot;
 
-import com.gojek.parkinglot.exception.ErrorDescription;
+import com.gojek.parkinglot.constant.ErrorConstants;
 import com.gojek.parkinglot.exception.ParkingLotException;
 import com.gojek.parkinglot.processor.AbstractProcessor;
 import com.gojek.parkinglot.processor.RequestProcessor;
@@ -88,7 +88,7 @@ public class Starter {
         }
       }
     } catch (Exception e) {
-      throw new ParkingLotException(ErrorDescription.INVALID_REQUEST_ERR_MSG);
+      throw new ParkingLotException(ErrorConstants.INVALID_REQUEST_ERR_MSG);
     } finally {
       try {
         if (bufferReader != null) {
@@ -121,7 +121,7 @@ public class Starter {
         lineNo++;
       }
     } catch (Exception e) {
-      throw new ParkingLotException(ErrorDescription.INVALID_FILE_ERR_MSG);
+      throw new ParkingLotException(ErrorConstants.INVALID_FILE_ERR_MSG);
     } finally {
       try {
         if (bufferReader != null) {

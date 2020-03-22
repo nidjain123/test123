@@ -3,7 +3,7 @@ package com.gojek.parkinglot.processor;
 
 import com.gojek.parkinglot.constant.CommonConstant;
 import com.gojek.parkinglot.constant.VehicleType;
-import com.gojek.parkinglot.exception.ErrorDescription;
+import com.gojek.parkinglot.constant.ErrorConstants;
 import com.gojek.parkinglot.exception.ParkingLotException;
 import com.gojek.parkinglot.model.ParkingLevel;
 import com.gojek.parkinglot.model.ParkingSlot;
@@ -44,7 +44,7 @@ public class RequestProcessor implements AbstractProcessor {
           parkingService.createPartkingLot(noOflevels, parkingLevels);
           System.out.println(String.format("Created a parking lot with %s slots", capacity));
         } catch (NumberFormatException e) {
-          throw new ParkingLotException(String.format(ErrorDescription.INVALID_VALUE_ERR_MSG, "capacity"));
+          throw new ParkingLotException(String.format(ErrorConstants.INVALID_VALUE_ERR_MSG, "capacity"));
         }
         break;
       case CommonConstant.PARK:
@@ -60,7 +60,7 @@ public class RequestProcessor implements AbstractProcessor {
           parkingService.leaveSlot(noOflevels, slotNumber);
           System.out.println(String.format("Slot number %s is free", slotNumber + 1));
         } catch (NumberFormatException e) {
-          throw new ParkingLotException(String.format(ErrorDescription.INVALID_VALUE_ERR_MSG, "slot_number"));
+          throw new ParkingLotException(String.format(ErrorConstants.INVALID_VALUE_ERR_MSG, "slot_number"));
         }
         break;
       case CommonConstant.SLOTS_NUMBER_FOR_CARS_WITH_COLOR:

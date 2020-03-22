@@ -1,6 +1,6 @@
-package com.gojek.parkinglot.exception;
+package com.gojek.parkinglot.constant;
 
-public class ErrorDescription {
+public class ErrorConstants {
   //Error Msg
   public static final String PARKING_ALREADY_EXIST_ERR_MSG = "Sorry Parking Already Created, It CAN NOT be again recreated.";
   public static final String PARKING_LOT_FULL_ERR_MSG = "Sorry, parking lot is full";

@@ -6,7 +6,7 @@ import com.gojek.parkinglot.model.Vehicle;
 import com.gojek.parkinglot.model.VehicleParkingLocation;
 import java.util.List;
 
-public interface VehicleParkingService extends AbstractParkingService {
+public interface VehicleParkingService {
 
   void createPartkingLot(final int noOflevels, final List<ParkingLevel> levels) throws ParkingLotException;
 
