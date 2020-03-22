@@ -20,7 +20,7 @@ public class VehicleParkingServiceImpl implements VehicleParkingService {
         }
         //Assuming all levels will be added during initialization.
         vehicleParkingDaoProxy = new VehicleParkingDaoProxyImpl();
-        vehicleParkingDaoProxy.createPartkingLot(noOflevels, levels);
+        vehicleParkingDaoProxy.createParkingLot(noOflevels, levels);
     }
 
     public VehicleParkingLocation parkVehicle(Vehicle vehicle) throws ParkingLotException {

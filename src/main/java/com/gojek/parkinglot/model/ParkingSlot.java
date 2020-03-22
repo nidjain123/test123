@@ -38,4 +38,8 @@ public class ParkingSlot {
         this.vehicle = null;
         free = true;
     }
+
+    public boolean isVehicleParkable(final ParkingSlotType parkingSlotType) {
+        return type.toString().equalsIgnoreCase((parkingSlotType).toString());
+    }
 }

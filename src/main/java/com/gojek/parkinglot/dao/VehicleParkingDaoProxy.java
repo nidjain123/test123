@@ -8,7 +8,7 @@ import com.gojek.parkinglot.model.VehicleParkingLocation;
 
 public interface VehicleParkingDaoProxy {
 
-    void createPartkingLot(final int noOflevels, final List<ParkingLevel> levels);
+    void createParkingLot(final int noOflevels, final List<ParkingLevel> levels);
 
     VehicleParkingLocation parkVehicle(final Vehicle vehicle);
 

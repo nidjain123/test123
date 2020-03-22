@@ -2,11 +2,9 @@ package com.gojek.parkinglot.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.gojek.parkinglot.constant.ParkingSlotType;
-import com.gojek.parkinglot.constant.VehicleType;
 import com.gojek.parkinglot.model.ParkingLevel;
 import com.gojek.parkinglot.model.ParkingSlot;
 import com.gojek.parkinglot.model.Vehicle;
@@ -18,7 +16,7 @@ public class VehicleParkingDaoProxyImpl implements VehicleParkingDaoProxy {
     private final static Logger LOGGER = Logger.getLogger(VehicleParkingDaoProxyImpl.class.getName());
 
     @Override
-    public void createPartkingLot(final int noOflevels, final List<ParkingLevel> levels) {
+    public void createParkingLot(final int noOflevels, final List<ParkingLevel> levels) {
         parkingLot = new ArrayList<>();
         //initialize
         for (int level = 0; level < noOflevels; level++) {
@@ -33,10 +31,7 @@ public class VehicleParkingDaoProxyImpl implements VehicleParkingDaoProxy {
         for (int level = 0; level < parkingLot.size(); level++) {
             for (int slot = 0; slot < parkingLot.get(level).getSlots().size(); slot++) {
                 ParkingSlot parkingSlot = parkingLot.get(level).getSlots().get(slot);
-                if (parkingSlot.isFree() && parkingSlot
-                        .getType()
-                        .toString()
-                        .equalsIgnoreCase(getParkingTypeByVehicle(vehicle.getType()).toString())) {
+                if (isVehicleParkable(vehicle, parkingSlot)) {
                     parkingLocation = VehicleParkingLocation.builder().level(level).slot(parkingSlot.getSlotNumber()).build();
                     parkingSlot.assignVehicle(vehicle);
                     break;
@@ -44,6 +39,10 @@ public class VehicleParkingDaoProxyImpl implements VehicleParkingDaoProxy {
             }
         }
         return parkingLocation;
+    }
+
+    private boolean isVehicleParkable(Vehicle vehicle, ParkingSlot parkingSlot) {
+        return parkingSlot.isFree() && parkingSlot.getType().equals(ParkingSlotType.getParkingSlotType(vehicle.getType()));
     }
 
     @Override
@@ -134,18 +133,5 @@ public class VehicleParkingDaoProxyImpl implements VehicleParkingDaoProxy {
             }
         }
         return -1;
-    }
-
-    private ParkingSlotType getParkingTypeByVehicle(final VehicleType vehicleType) {
-        switch (vehicleType) {
-            case CAR:
-            case MOTORBIKE:
-                return ParkingSlotType.SMALL;
-            case TRUCK:
-                return ParkingSlotType.LARGE;
-            default:
-                LOGGER.log(Level.SEVERE, "Not a valid vehicle type");
-                return null;
-        }
     }
 }
