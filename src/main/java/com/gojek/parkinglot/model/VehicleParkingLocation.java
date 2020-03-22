@@ -9,7 +9,7 @@ import lombok.Setter;
 @Builder
 public class VehicleParkingLocation {
 
-  private int level;
-  private int slot;
+    private int level;
+    private int slot;
 
 }

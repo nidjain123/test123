@@ -4,8 +4,8 @@ import com.gojek.parkinglot.constant.ParkingSlotType;
 
 class LargeSlot extends ParkingSlot {
 
-  public LargeSlot(final int slotNumber, final boolean free) {
-    super(ParkingSlotType.LARGE, slotNumber, free);
-  }
+    public LargeSlot(final int slotNumber, final boolean free) {
+        super(ParkingSlotType.LARGE, slotNumber, free);
+    }
 }
 
