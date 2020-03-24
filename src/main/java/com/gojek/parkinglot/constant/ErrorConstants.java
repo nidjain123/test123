@@ -1,5 +1,8 @@
 package com.gojek.parkinglot.constant;
 
+/**
+ * Constant class for all errors.
+ */
 public class ErrorConstants {
     //Error Msg
     public static final String PARKING_ALREADY_EXIST_ERR_MSG = "Sorry Parking Already Created, It CAN NOT be again recreated.";
@@ -9,5 +12,6 @@ public class ErrorConstants {
     public static final String INVALID_FILE_ERR_MSG = "Invalid File";
     public static final String INVALID_REQUEST_ERR_MSG = "Invalid Request";
     public static final String NOT_FOUND_ERR_MSG = "Not found";
+    public static final String PARKING_LOT_DOESNT_EXISTS_ERR_MSG = "Parking lot doesn't exists";
 
 }

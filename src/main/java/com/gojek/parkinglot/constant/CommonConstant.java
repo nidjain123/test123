@@ -1,5 +1,8 @@
 package com.gojek.parkinglot.constant;
 
+/**
+ * Class to handle all input commands to operate.
+ */
 public interface CommonConstant {
 
     String CREATE_PARKING_LOT = "create_parking_lot";
@@ -9,8 +12,4 @@ public interface CommonConstant {
     String REG_NUMBER_FOR_CARS_WITH_COLOR = "registration_numbers_for_cars_with_colour";
     String SLOTS_NUMBER_FOR_CARS_WITH_COLOR = "slot_numbers_for_cars_with_colour";
     String SLOTS_NUMBER_FOR_REG_NUMBER = "slot_number_for_registration_number";
-
-    int NOT_AVAILABLE = -1;
-    int VEHICLE_ALREADY_EXIST = -2;
-    int NOT_FOUND = -1;
 }

@@ -7,6 +7,34 @@
   <groupId>org.example</groupId>
   <artifactId>parking_lot</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <url>http://maven.apache.org</url>
+  <packaging>jar</packaging>
+  <name>parking_lot</name>
+  <properties>
+    <lombok.version>1.18.12</lombok.version>
+    <junit-jupiter-api.version>5.4.0</junit-jupiter-api.version>
+    <junit-jupiter-engine.version>5.4.2</junit-jupiter-engine.version>
+    <mockito.version>2.10.0</mockito.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+    </dependency>
+    <!--Junit Dependencies-->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit-jupiter-api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>2.10.0</version>
+    </dependency>
+  </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -17,16 +45,29 @@
           <target>8</target>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.gojek.parkinglot.Starter</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M4</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter-engine.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
     </plugins>
   </build>
-  <properties>
-    <lombok.version>1.18.12</lombok.version>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${lombok.version}</version>
-    </dependency>
-  </dependencies>
 </project>

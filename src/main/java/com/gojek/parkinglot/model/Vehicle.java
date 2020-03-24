@@ -7,6 +7,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+/**
+ * Vechicle class for vehicle's property.
+ */
 @Getter
 @Setter
 @Builder
@@ -14,8 +18,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Vehicle {
 
-    private String registrationNumber;
-    private VehicleType type;
-    private String color;
+  private String registrationNumber;
+  private VehicleType type;
+  private String color;
 
 }

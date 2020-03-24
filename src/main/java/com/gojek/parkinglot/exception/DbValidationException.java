@@ -1,18 +1,18 @@
 package com.gojek.parkinglot.exception;
 
 /**
- * Exception class to handle all exceptions.
+ * Exception class to handle all validation exceptions.
  */
-public class ParkingLotException extends Exception {
+public class DbValidationException extends Exception {
 
   private int errorCode;
 
-  ParkingLotException(final int errorCode, final String errorMessage) {
+  DbValidationException(final int errorCode, final String errorMessage) {
     super(errorMessage);
     this.errorCode = errorCode;
   }
 
-  public ParkingLotException(final String errorMessage) {
+  public DbValidationException(final String errorMessage) {
     super(errorMessage);
   }
 

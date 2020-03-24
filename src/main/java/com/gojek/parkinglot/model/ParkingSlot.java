@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Parking slot class for all vehicles.
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter

@@ -4,12 +4,15 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * VehicleParkingLocation class to give vehicle's position.
+ */
 @Getter
 @Setter
 @Builder
 public class VehicleParkingLocation {
 
-    private int level;
-    private int slot;
+  private int level;
+  private int slot;
 
 }

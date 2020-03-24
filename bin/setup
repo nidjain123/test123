@@ -1,3 +1,8 @@
 #!/./bin/sh
-cd ..
 mvn clean install
+
+echo 'copy executable file from target to bin folder'
+cd bin
+if(ta)
+mkdir target
+cp ../target/parking_lot-1.0-SNAPSHOT.jar target/
